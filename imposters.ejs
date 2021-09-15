@@ -1,0 +1,31 @@
+{ "imposters" : [{
+    "port" : 7878,
+    "protocol" : "http",
+    "name" : "Tutorial",
+    "stubs" : [{
+      "predicates": [{
+        "equals" : {
+          "method" : "POST",
+          "headers" : {"Content-Type" : "application/json"}
+        }
+      },
+      {
+        "or" : [
+          {"equals": { "path": "/capture"}},
+          {"equals": { "path": "/cancel"}},
+          {"equals": { "path": "/refund"}}
+        ]
+      },
+      {"exists" : {"body" : true}}],
+      "responses": [{
+        "is" : {
+          "statusCode" : 200,
+          "headers" : {
+            "Content-Type" : "application/json"
+          },
+          "body" : {"message":"success"}
+        }
+      }]
+    }]
+  }]
+}
