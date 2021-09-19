@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mountebank:
+    build: .
+    image: kaori02/mountebank
+    container_name: kaori02-mountebank
+    ports:
+      - "9500-9600:9500-9600"
+    networks:
+      mountebank_local_net:
+        ipv4_address: 192.168.200.5
+
+networks:
+  mountebank_local_net:
+    internal: true
+    ipam:
+      config:
+        - subnet: 192.168.200.0/24

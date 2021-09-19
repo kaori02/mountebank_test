@@ -50,4 +50,67 @@ curl -X DELETE http://localhost:2525/imposters/7878
 
 ## Run With Docker
 
-Coming soon...
+### Start
+
+You can run the mountebank service using this command
+
+```sh
+docker-compose up
+```
+
+Then you can see mountebank documentation in your local machine by simply open http://192.168.200.5:9500/ from your browser
+
+### Create Requests to Mountebank
+
+- GET
+
+  you can create GET request by simply open http://192.168.200.5:7878/tutorial in your browser, you will see an empty white page there
+
+- POST
+  
+  you can create POST request with this command
+
+  ```sh
+  curl -i -X POST http://192.168.200.5:7878/tutorial
+  ```
+
+  and you will get this response
+  
+  ```sh
+  HTTP/1.1 200 OK
+  Connection: close
+  Date: Wed, 15 Sep 2021 02:02:01 GMT
+  Transfer-Encoding: chunked
+  ```
+
+  you can also do that via [Postman](https://www.postman.com/downloads/). Just make sure that you don't leave the body empty. You will get this as the output:
+
+  ```json
+  {
+    "message": "success"
+  }
+  ```
+
+### Stop
+
+You can stop the service by simply press `ctrl+c` then run this command
+
+```sh
+./down.sh
+```
+
+### List of Container(s)
+
+You can see list of container(s) using this command
+
+```sh
+docker ps -a
+````
+
+### List of Image(s)
+
+You can see list of docker image(s) using this command
+
+```sh
+docker images
+````
