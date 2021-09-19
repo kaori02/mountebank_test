@@ -15,7 +15,6 @@
 
 Then you can see mountebank documentation in your local machine by simply open http://localhost:2525/ from your browser
 
-
 ### Create Requests to Mountebank
 
 - GET
@@ -63,7 +62,7 @@ docker-compose up
 
 Then you can see mountebank documentation in your local machine by simply open http://192.168.200.5:9500/ from your browser
 
-### Create Requests to Mountebank
+### Create Requests
 
 - GET
 
@@ -94,7 +93,7 @@ Then you can see mountebank documentation in your local machine by simply open h
   }
   ```
 
-### Delete Imposter
+### Delete Imposter(s)
 
 You can delete the existing imposter(s) by creating a `DELETE` request to port `9500`
 
@@ -103,7 +102,6 @@ curl -X DELETE http://192.168.200.5:9500/imposters/7878
 ```
 
 > for now we only have 1 imposter named `Tutorial` that runs on port `7878`
-
 
 ### Stop
 
