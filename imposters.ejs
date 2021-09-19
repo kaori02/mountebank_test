@@ -2,7 +2,8 @@
     "port" : 7878,
     "protocol" : "http",
     "name" : "Tutorial",
-    "stubs" : [{
+    "stubs" : [
+    {
       "predicates": [
       {
         "equals" : {
@@ -24,7 +25,25 @@
           "headers" : {
             "Content-Type" : "application/json"
           },
-          "body" : {"message":"success"}
+          "body" : {"message" : "post success"}
+        }
+      }]
+    },
+    {
+      "predicates": [
+      {
+        "equals" : {
+          "method" : "GET",
+          "path": "/tutorial"
+        }
+      }],
+      "responses": [{
+        "is" : {
+          "statusCode" : 200,
+          "headers" : {
+            "Content-Type" : "application/json"
+          },
+          "body" : {"message" : "get success"}
         }
       }]
     }]
